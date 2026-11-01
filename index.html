@@ -1,113 +1,333 @@
-<!doctype html>
+<!doctype html>  <!-- 声明这是 HTML5 文档，让浏览器按现代 HTML 标准模式解释页面。 -->
+
+
+<!-- 开始整个 HTML 文档；lang="en" 表示页面正文是英文，帮助朗读工具和翻译工具识别语言。中文注释不会改变页面语言。 -->
 <html lang="en">
+
+<!-- 开始页面的设置区：存放编码、网页标题、搜索描述和样式文件引用；这些内容不作为正文显示。 -->
 <head>
+
+  <!-- 使用 UTF-8 字符编码，使英文、中文、箭头等字符能够正确显示；meta 是无需结束标签的元素。 -->
   <meta charset="utf-8">
+<!--
+首页逐行中文注释：从上往下阅读，每条注释解释下面紧接的一行代码；第一行的解释放在同行。
+HTML 标签负责内容和结构；class 是自定义样式名称，具体外观在 styles.css 中定义；id 是页面内的唯一标识。
+开始标签与带 / 的结束标签通常成对出现；缩进方便阅读，实际嵌套关系由标签决定。
+href 指定链接目标，src 指定图片来源；相对路径从当前页面位置解析。
+注释是写给编辑代码的人看的说明，浏览器不会把注释作为正文显示。
+照片：把真人照片放入 assets/profile.jpg 后，在 img 那行修改 src 和 alt。
+研究方向：在 field-list 的 ul 内新增 li；简介段落和搜索描述需要分别编辑。
+保存修改用 Ctrl+S；git add、git commit、git push 后，还需要等待 GitHub Pages 完成部署，线上页面才会更新。
+-->
+
+  <!-- 设置手机视口：页面布局宽度跟随设备宽度，初始缩放比例为 1；配合 CSS 的手机样式使用。 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 给搜索引擎提供本页简介；真正的简介文字在 content 引号内。这一行不会自动同步正文中的自我介绍或研究方向。 -->
   <meta name="description" content="Lulin Li, Ph.D. student in Economics at the University of Connecticut. Research in industrial organization and platform economics.">
+
+  <!-- 设置浏览器标签页和书签使用的标题；它与网页正文里的姓名标题是两个不同的位置。 -->
   <title>Lulin Li | Economics</title>
+
+  <!-- 加载浏览器标签页的小图标；rel 指定用途为图标，href 指向 assets 文件夹内的 SVG，type 指明图片格式。 -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- 加载同一文件夹内的 styles.css 样式表；里面的规则决定颜色、字体、间距、列数和手机布局。 -->
   <link rel="stylesheet" href="styles.css">
+
+<!-- 结束页面设置区。 -->
 </head>
+
+<!-- 开始网页正文；浏览器中能看到和操作的主要页面内容都放在这里。 -->
 <body>
+
+  <!-- 添加跳到正文的辅助链接；href="#main" 指向本页 id="main" 的元素。skip-link 样式平时把它移出视野，键盘聚焦时显示。 -->
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 开始网站顶部页头；site-header 是自定义样式名，对应 CSS 中的顶部边框等设置。 -->
   <header class="site-header">
+
+    <!-- 页头内部容器；header-inner 在 CSS 中控制内容宽度，并排列左侧姓名标识和右侧导航。 -->
     <div class="header-inner">
+
+      <!-- 姓名标识是返回首页的链接；wordmark 控制字体和排版。span 把 Economics 单独分组，便于设置分隔线和小字；aria-label 给朗读工具提供链接名称。 -->
       <a class="wordmark" href="index.html" aria-label="Lulin Li, home">Lulin Li<span>Economics</span></a>
+
+      <!-- 开始主导航区；nav 表示这里是一组导航链接，aria-label 为这个区域提供辅助名称。 -->
       <nav aria-label="Main navigation">
+
+        <!-- Home 链接指向首页；aria-current="page" 表示当前页就是首页，本网站 CSS 也用它给当前导航项加下划线。 -->
         <a href="index.html" aria-current="page">Home</a>
+
+        <!-- Research 是显示给读者的文字；点击后打开同一文件夹内的 research.html 研究页。 -->
         <a href="research.html">Research</a>
+
+        <!-- 点击 Teaching 打开同一文件夹内的 teaching.html 教学页。 -->
         <a href="teaching.html">Teaching</a>
+
+        <!-- 点击 CV 打开 cv.html 网页版简历；这里链接的是 HTML 页面，不是 PDF 文件。 -->
         <a href="cv.html">CV</a>
+
+      <!-- 结束主导航区域；后续元素不再属于这组导航链接。 -->
       </nav>
+
+    <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
     </div>
+
+  <!-- 结束网站顶部页头。 -->
   </header>
 
+
+  <!-- 开始页面主要内容；id="main" 供前面的跳转链接定位，container 样式限制最大宽度并让整块内容居中。 -->
   <main id="main" class="container">
+
+    <!-- 开始首页介绍区；home-intro 在宽屏下分成介绍和侧栏两列，在手机上改为单列。aria-labelledby 用 id="name" 的标题作为区域名称。 -->
     <section class="home-intro" aria-labelledby="name">
+
+      <!-- 把姓名、自我介绍和快捷链接放在同一个容器中，作为介绍区的主要一栏；类名标识这块内容，列布局由外层 home-intro 决定。 -->
       <div class="intro-main">
+
+        <!-- 显示姓名上方的学校名称；p 表示一段文字，eyebrow 样式将它显示为小号、字距较宽的大写文字。 -->
         <p class="eyebrow">University of Connecticut</p>
+
+        <!-- 显示本页最重要的一级标题，即姓名；id="name" 与外层 aria-labelledby="name" 对应。要改姓名，应同时检查页头和页脚等其他位置。 -->
         <h1 id="name">Lulin Li</h1>
+
+        <!-- 显示姓名下方的身份说明；role 是这里的 CSS 类名，让这行使用较小的衬线字体和灰色。 -->
         <p class="role">Ph.D. Student in Economics</p>
-        <!-- Edit these paragraphs to update your introduction. -->
+
+
+        <!-- 开始个人简介容器；biography 样式统一控制下面几段简介的字号、行距和段落间距。 -->
         <div class="biography">
+
+          <!-- 第一段简介：学校、身份和研究兴趣。中间的 a 标签把 Department of Economics 变成系网站的外部链接。此处的研究兴趣与右侧列表是两份独立文字，需要分别编辑。 -->
           <p>I am a Ph.D. student in the <a href="https://econ.uconn.edu/">Department of Economics</a> at the University of Connecticut. My research interests are industrial organization and platform economics.</p>
+
+          <!-- 第二段简介：概述平台竞争和电动车补贴研究；修改 p 开始与结束标签之间的英文即可更新这段正文。 -->
           <p>My work examines competition in content-creation markets and the effects of government subsidies on firm behavior in China’s electric vehicle market.</p>
+
+          <!-- 第三段简介：概述之前取得的学位；正文文字可以改，保留外侧 p 标签以维持段落结构。 -->
           <p>I hold an M.A. in Economics from Columbia University and a B.A. in Economics and Physics from Mount Holyoke College.</p>
+
+        <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
         </div>
+
+        <!-- 开始简介下方的快捷链接区；intro-links 在 CSS 中设置纵向排列、左对齐和链接间距。 -->
         <div class="intro-links">
+
+          <!-- 点击 Explore my research 打开研究页；text-link 控制链接外观。箭头放在 span 中，aria-hidden="true" 让朗读工具跳过装饰箭头，但网页仍会显示它。 -->
           <a class="text-link" href="research.html">Explore my research <span aria-hidden="true">→</span></a>
+
+          <!-- 打开 assets 中的 CV PDF；target="_blank" 通常在新标签页打开，rel="noopener" 阻止新页面通过 opener 访问原页面。file-label 显示小 PDF 标识；sr-only 的提示只供朗读工具读取。 -->
           <a class="text-link" href="assets/Lulin_Li_CV.pdf" target="_blank" rel="noopener">Curriculum vitae <span class="file-label">PDF</span><span class="sr-only"> (opens in a new tab)</span></a>
+
+        <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
         </div>
+
+      <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
       </div>
+
+      <!-- 开始包含照片、研究方向和联系方式的辅助区域；profile-aside 控制侧栏边框和布局，aria-label 为该区域提供朗读名称。 -->
       <aside class="profile-aside" aria-label="Portrait, research fields and contact">
+
+        <!-- 开始照片的语义容器；portrait-frame 控制照片区域的间距，并在窄屏下设置宽度和居中。 -->
         <figure class="portrait-frame">
-          <!-- To add your photo, save it as assets/profile.jpg, then change src to
-               assets/profile.jpg and alt to Portrait of Lulin Li. -->
+
+
+          <!-- 显示照片占位图：src 是图片路径，alt 是图片无法显示或由朗读工具读取时的说明；width 和 height 提供原始尺寸与 4:5 比例，实际显示大小由 portrait 样式控制。换真人照片时改 src 和 alt。 -->
           <img class="portrait" src="assets/profile-placeholder.svg" alt="Reserved space for a portrait of Lulin Li" width="320" height="400">
+
+        <!-- 结束照片容器；img 是无需结束标签的元素，因此没有单独的结束 img 标签。 -->
         </figure>
+
+        <!-- 开始侧栏中的一个主题区块；这里是研究方向。aside-section 与相邻同类区块的间距、分隔线由 CSS 控制。 -->
         <section class="aside-section">
+
+          <!-- 显示研究方向的二级标题；h2 表示标题层级，small-heading 将外观设置为小号大写字母，标题层级不由字号大小决定。 -->
           <h2 class="small-heading">Research fields</h2>
+
+          <!-- 开始无序列表；class 中两个名字分别启用两组样式：plain-list 去掉默认圆点和缩进，field-list 设置研究方向列表的字体、行距和颜色。 -->
           <ul class="plain-list field-list">
+
+            <!-- 第一条研究方向：产业组织。li 表示一条列表项；修改两个标签之间的英文即可改显示内容。 -->
             <li>Industrial Organization</li>
+
+            <!-- 第二条研究方向：平台经济学。需要新增方向时，可以复制这种完整的 li 元素并修改文字。 -->
             <li>Platform Economics</li>
+
+            <!-- 第三条研究方向：资源经济学。新增项目应放在 ul 开始与结束标签之间；保存并发布后，线上页面才会更新。 -->
             <li>Resource Economics</li>
+
+          <!-- 结束研究方向列表；放在这一行之后的内容不再属于该列表。 -->
           </ul>
+
+        <!-- 结束最近一个尚未关闭的 section 主题区块；缩进对应它的开始位置。 -->
         </section>
+
+        <!-- 开始联系方式区块；沿用 aside-section 样式。id="contact" 使本页的 #contact 链接能够直接定位这里。 -->
         <section class="aside-section" id="contact">
+
+          <!-- 显示联系方式标题；与 Research fields 使用相同的小标题样式。 -->
           <h2 class="small-heading">Contact</h2>
+
+          <!-- 显示邮箱链接；mailto: 会请求打开读者配置的邮件应用或处理程序，不会自动发送邮件。更换邮箱时，要同时改 href 内的地址和标签之间显示的地址。 -->
           <a class="email" href="mailto:lulin.li@uconn.edu">lulin.li@uconn.edu</a>
+
+          <!-- 开始作者的联系地址信息；address 提供语义，本网站 CSS 将它显示为较小的灰色正体文字。 -->
           <address>
+
+            <!-- 显示地址第一行的系名；br 在这里强制换行，后面的学校名另起一行。br 不需要结束标签。 -->
             Department of Economics<br>
+
+            <!-- 显示地址第二行的学校名；末尾 br 使下一行街道地址另起一行。 -->
             University of Connecticut<br>
+
+            <!-- 显示办公楼与街道地址；br 在街道地址之后换行。 -->
             Oak Hall, 363–367 Fairfield Way<br>
+
+            <!-- 显示城市、州缩写与邮编；这是 address 区域的最后一行文字。 -->
             Storrs, CT 06269
+
+          <!-- 结束联系地址信息。 -->
           </address>
+
+        <!-- 结束最近一个尚未关闭的 section 主题区块；缩进对应它的开始位置。 -->
         </section>
+
+        <!-- 单独显示所在地；location 类控制字色和间距，本网站手机样式会隐藏这行，完整联系地址仍保留。 -->
         <p class="location">Storrs, Connecticut</p>
+
+      <!-- 结束照片、研究方向和联系方式组成的侧栏。 -->
       </aside>
+
+    <!-- 结束最近一个尚未关闭的 section 主题区块；缩进对应它的开始位置。 -->
     </section>
 
+
+    <!-- 开始首页的论文列表区；home-section 控制上边框和间距，aria-labelledby 用 id="working-papers" 的标题给该区域命名。 -->
     <section class="home-section" aria-labelledby="working-papers">
+
+      <!-- 开始论文区标题栏；section-heading 使用弹性布局排列左侧标题和右侧 View research 链接。 -->
       <div class="section-heading">
+
+        <!-- 一个 div 内包含小字 Research 和二级标题 Working papers；标题的 id 与外层 aria-labelledby 对应，两个标题会作为一组参与布局。 -->
         <div><p class="eyebrow">Research</p><h2 id="working-papers">Working papers</h2></div>
+
+        <!-- 论文区右侧的入口链接：点击后进入研究页；箭头是装饰，aria-hidden 仅让朗读工具忽略它。 -->
         <a class="text-link" href="research.html">View research <span aria-hidden="true">→</span></a>
+
+      <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
       </div>
+
+      <!-- 开始一篇可独立理解的论文条目；article 表达条目语义，paper-preview 在宽屏下分成编号、论文信息和箭头三列。 -->
       <article class="paper-preview">
+
+        <!-- 显示第一篇论文的装饰编号 01；paper-number 控制外观，aria-hidden 让朗读工具忽略编号。 -->
         <span class="paper-number" aria-hidden="true">01</span>
+
+        <!-- 把下方的论文标题和补充说明组合成一个普通容器，放在论文条目中间的信息列。 -->
         <div>
+
+          <!-- h3 是论文标题；标题内部的 a 让整个标题可点击，href 指向平台竞争论文 PDF。这里没有 target 属性，正常点击会在当前标签页导航到 PDF。 -->
           <h3><a href="assets/papers/platform-specialization-and-diversification.pdf">Platform Specialization and Diversification in Content-Creation Markets: Impacts on Network Effects and Competitive Strategies</a></h3>
+
+          <!-- 显示平台论文的研究领域补充信息；paper-meta 控制较小的灰色文字，中间的圆点只作视觉分隔，朗读工具会跳过它。 -->
           <p class="paper-meta">Platform economics <span aria-hidden="true">·</span> Industrial organization</p>
+
+        <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
         </div>
+
+        <!-- 论文右侧的箭头也是打开平台论文 PDF 的链接；aria-label 为只有图标的链接提供完整名称。手机样式会隐藏箭头，但标题链接仍可使用。 -->
         <a class="paper-arrow" href="assets/papers/platform-specialization-and-diversification.pdf" aria-label="Read the platform specialization working paper (PDF)">↗</a>
+
+      <!-- 结束这一篇论文条目；下一篇论文应作为新的 article 开始。 -->
       </article>
+
+      <!-- 开始一篇可独立理解的论文条目；article 表达条目语义，paper-preview 在宽屏下分成编号、论文信息和箭头三列。 -->
       <article class="paper-preview">
+
+        <!-- 显示第二篇论文的装饰编号 02；调整论文顺序时可以同步改这里。 -->
         <span class="paper-number" aria-hidden="true">02</span>
+
+        <!-- 把下方的论文标题和补充说明组合成一个普通容器，放在论文条目中间的信息列。 -->
         <div>
+
+          <!-- 显示电动车论文标题；链接先打开 research.html，再通过 #electric-vehicles 定位研究页中同名 id 的条目。这一篇目前链接到介绍区，而不是 PDF。 -->
           <h3><a href="research.html#electric-vehicles">The Dynamic Effects of Government Subsidies on Firm Behavior in China’s Electric Vehicle Market: A Theoretical and Empirical Analysis</a></h3>
+
+          <!-- 显示电动车论文的合作者说明；paper-meta 沿用补充信息的小号灰色样式。 -->
           <p class="paper-meta">With Ling Huang</p>
+
+        <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
         </div>
+
+        <!-- 第二篇论文的箭头入口，目标与该篇标题相同，都是研究页中的 electric-vehicles 区块；aria-label 说明链接用途。 -->
         <a class="paper-arrow" href="research.html#electric-vehicles" aria-label="Read about the electric vehicle subsidies working paper">↗</a>
+
+      <!-- 结束这一篇论文条目；下一篇论文应作为新的 article 开始。 -->
       </article>
+
+      <!-- 开始一篇可独立理解的论文条目；article 表达条目语义，paper-preview 在宽屏下分成编号、论文信息和箭头三列。 -->
       <article class="paper-preview">
+
+        <!-- 显示第三篇论文的装饰编号 03，朗读工具会跳过该编号。 -->
         <span class="paper-number" aria-hidden="true">03</span>
+
+        <!-- 把下方的论文标题和补充说明组合成一个普通容器，放在论文条目中间的信息列。 -->
         <div>
+
+          <!-- 显示 SREC 论文标题；点击标题在当前标签页打开 assets/papers 下的全文 PDF。更换 PDF 文件名时需要同步修改这里的 href。 -->
           <h3><a href="assets/papers/solar-renewable-energy-certificates.pdf">Solar Renewable Energy Certificates and the Electricity Generation Mix: The Role of Initial Policy Stringency</a></h3>
+
+          <!-- 显示 SREC 论文的两位合作者；这行只负责展示文字，不会从 PDF 自动读取作者信息。 -->
           <p class="paper-meta">With Shangyue Jiang and Ling Huang</p>
+
+        <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
         </div>
+
+        <!-- 第三篇论文的箭头链接，同样打开 SREC PDF；aria-label 提供完整的链接用途。更新论文路径时，应与上方标题链接一起修改。 -->
         <a class="paper-arrow" href="assets/papers/solar-renewable-energy-certificates.pdf" aria-label="Read the solar renewable energy certificates paper (PDF)">↗</a>
+
+      <!-- 结束这一篇论文条目；下一篇论文应作为新的 article 开始。 -->
       </article>
+
+    <!-- 结束最近一个尚未关闭的 section 主题区块；缩进对应它的开始位置。 -->
     </section>
 
+
+    <!-- 开始教育经历区；同时使用 home-section 的通用区块样式和 education-section 的专属间距。aria-labelledby 指向 id="education" 的标题。 -->
     <section class="home-section education-section" aria-labelledby="education">
+
+      <!-- 教育区标题栏：h2 显示 Education，id 供外层引用；右侧 Full CV 链接进入网页版简历，箭头为装饰。 -->
       <div class="section-heading"><h2 id="education">Education</h2><a class="text-link" href="cv.html">Full CV <span aria-hidden="true">→</span></a></div>
+
+      <!-- 开始教育经历网格；education-grid 在宽屏下显示三列，在手机上显示一列，便于阅读。 -->
       <div class="education-grid">
+
+        <!-- 第一项教育经历：外层 div 组合年份、三级标题学位名和学校段落；education-date 控制年份外观，present 表示持续至今。 -->
         <div><p class="education-date">2021–present</p><h3>Ph.D. in Economics</h3><p>University of Connecticut</p></div>
+
+        <!-- 第二项教育经历：2020 年、经济学硕士和 Columbia University；结构与博士经历相同。 -->
         <div><p class="education-date">2020</p><h3>M.A. in Economics</h3><p>Columbia University</p></div>
+
+        <!-- 第三项教育经历：2018 年、本科学位和 Mount Holyoke College；&amp; 是 HTML 字符实体，浏览器将它显示为一个 & 符号。 -->
         <div><p class="education-date">2018</p><h3>B.A. in Economics &amp; Physics</h3><p>Mount Holyoke College</p></div>
+
+      <!-- 结束最近一个尚未关闭的 div 容器；结合缩进找到它对应的开始标签，避免把后续内容放进错误的容器。 -->
       </div>
+
+    <!-- 结束最近一个尚未关闭的 section 主题区块；缩进对应它的开始位置。 -->
     </section>
+
+  <!-- 结束页面主要内容；后面的 footer 是独立的页脚区域。 -->
   </main>
 
+
+  <!-- 整行构成页脚：footer 表示页面底部，site-footer 设置背景和边框；内部 div 同时限制宽度并排列内容，p 显示姓名与学校，span 是装饰圆点，a 是邮箱链接。 -->
   <footer class="site-footer"><div class="container footer-inner"><p>Lulin Li <span aria-hidden="true">·</span> University of Connecticut</p><a href="mailto:lulin.li@uconn.edu">lulin.li@uconn.edu</a></div></footer>
+
+<!-- 结束所有网页正文内容。 -->
 </body>
+
+<!-- 结束整个 HTML 文档。 -->
 </html>
