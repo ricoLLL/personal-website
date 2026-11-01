@@ -50,11 +50,13 @@
 
 ## 添加论文 PDF
 
-把文件放到 `assets/papers/`，例如 `assets/papers/platforms.pdf`。在研究页对应论文中添加：
+把文件放到 `assets/papers/`，例如 `assets/papers/platforms.pdf`。把研究页对应论文的标题改成直接链接到 PDF：
 
 ```html
-<a class="text-link" href="assets/papers/platforms.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+<h2><a href="assets/papers/platforms.pdf">论文完整标题</a></h2>
 ```
+
+首页对应论文的标题链接也指向同一个 PDF，标题保留原有字体，鼠标悬停时显示下划线。无需另加 Paper/PDF 按钮。
 
 ## 上传到 GitHub
 

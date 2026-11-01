@@ -87,6 +87,8 @@ address { margin-top: 16px; color: var(--muted); font-size: 12px; font-style: no
 .paper-status { font-size: 10px; line-height: 1.6; text-transform: uppercase; letter-spacing: 1.3px; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
 .paper-status span { margin: 0 7px; color: #b4c1ca; }
 .research-paper h2 { font-size: 29px; line-height: 1.45; letter-spacing: -.25px; }
+.research-paper h2 a { text-decoration: none; }
+.research-paper h2 a:hover { text-decoration: underline; }
 .research-paper + .research-paper { margin-top: 38px; padding-top: 38px; border-top: 1px solid var(--rule); }
 .authors { font-size: 14px; margin-top: 16px; }
 .research-topics { font-size: 12px; color: var(--muted); margin-top: 11px; }
