@@ -15,6 +15,7 @@
 | `assets/favicon.svg` | 浏览器标签上的 L 图标 |
 | `assets/profile-placeholder.svg` | 首页右侧的照片占位图 |
 | `assets/papers/solar-renewable-energy-certificates.pdf` | SREC 论文全文，原始 43 页 PDF 的副本 |
+| `assets/papers/platform-specialization-and-diversification.pdf` | 平台竞争论文全文，原始 28 页 PDF 的副本 |
 | `.nojekyll` | 告诉 GitHub Pages 直接提供静态文件 |
 
 ## 本地编辑和预览
@@ -30,7 +31,7 @@
 
 - 身份、学历、联系方式、论文、课程及奖项依据本次提供的两页 CV。保留 CV 中标注为 present 的日期。
 - CV 只说明 Ph.D. 在读，因此主页使用 Ph.D. Student，没有推定 candidacy、毕业日期或 job-market 状态。
-- 前两篇论文的标题和合作者按 CV 保留。SREC 论文的标题、作者和可展开摘要来自此次提供的 43 页论文原件；PDF 以原文件的逐字节副本保存。
+- 平台竞争论文的标题、作者和可展开摘要来自提供的 28 页论文原件；SREC 论文的信息来自提供的 43 页论文原件。两篇 PDF 均以原文件的逐字节副本保存。电动车论文的标题和合作者按 CV 保留。
 - 首页右侧已留出 4:5 的照片位置，目前显示中性的线条占位图；添加真人照片的方法见下文。
 - 下载的 PDF 是原件的逐字节副本，仍包含原 CV 中的电话等联系方式。
 - 更新 CV 时，用同名文件替换 `assets/Lulin_Li_CV.pdf`，并同步修改各 HTML 页面相关文字。
