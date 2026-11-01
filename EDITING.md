@@ -13,6 +13,7 @@
 | `styles.css` | 四个页面共用的颜色、字体、布局和手机样式 |
 | `assets/Lulin_Li_CV.pdf` | 提供的 CV 原件副本，网页的 CV 按钮指向这里 |
 | `assets/favicon.svg` | 浏览器标签上的 L 图标 |
+| `assets/profile-placeholder.svg` | 首页右侧的照片占位图 |
 | `.nojekyll` | 告诉 GitHub Pages 直接提供静态文件 |
 
 ## 本地编辑和预览
@@ -29,10 +30,22 @@
 - 身份、学历、联系方式、论文、课程及奖项依据本次提供的两页 CV。保留 CV 中标注为 present 的日期。
 - CV 只说明 Ph.D. 在读，因此主页使用 Ph.D. Student，没有推定 candidacy、毕业日期或 job-market 状态。
 - 论文标题和合作者按 CV 保留，未编写论文摘要、结果或发表状态。收到正式摘要和论文 PDF 后可加入。
-- 没有提供个人照片，所以使用完整的纯文字版式，没有虚构头像或占位照片。
+- 首页右侧已留出 4:5 的照片位置，目前显示中性的线条占位图；添加真人照片的方法见下文。
 - 下载的 PDF 是原件的逐字节副本，仍包含原 CV 中的电话等联系方式。
 - 更新 CV 时，用同名文件替换 `assets/Lulin_Li_CV.pdf`，并同步修改各 HTML 页面相关文字。
 - 更新论文时，首页与研究页都需要修改。页面导航在四个 HTML 文件中各有一份。
+
+## 添加个人照片
+
+1. 选择一张竖版照片，推荐宽高比例 4:5（例如 800×1000 像素）。
+2. 把真实的 JPG 照片保存为 `assets/profile.jpg`。如果原文件是 PNG，请保留 `.png` 扩展名并同步修改下方路径。
+3. 在 `index.html` 中找到 `class="portrait"` 的图片，把这一行改为：
+
+```html
+<img class="portrait" src="assets/profile.jpg" alt="Portrait of Lulin Li" width="320" height="400">
+```
+
+照片会自动填满框并按 4:5 裁切，不会拉伸变形。若人脸裁切位置需要调整，在 `styles.css` 的 `.portrait` 中修改 `object-position: center 30%`，例如改成 `center top`。
 
 ## 添加论文 PDF
 
