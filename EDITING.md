@@ -1,0 +1,69 @@
+# 个人网站维护说明
+
+这个网站是英文、纯静态的学术主页，适用于 GitHub Pages。直接用 VS Code 编辑文件即可，无需安装 Node.js、框架或依赖。
+
+## 文件分工
+
+| 文件 | 内容 |
+| --- | --- |
+| `index.html` | 首页、自我介绍、研究方向、联系方式、论文入口和教育背景 |
+| `research.html` | 两篇 working papers 的标题、合作者和联系入口 |
+| `teaching.html` | 助教经历、课程及研究指导经历 |
+| `cv.html` | 教育、经历、奖项、服务与技能的网页版 |
+| `styles.css` | 四个页面共用的颜色、字体、布局和手机样式 |
+| `assets/Lulin_Li_CV.pdf` | 提供的 CV 原件副本，网页的 CV 按钮指向这里 |
+| `assets/favicon.svg` | 浏览器标签上的 L 图标 |
+| `.nojekyll` | 告诉 GitHub Pages 直接提供静态文件 |
+
+## 本地编辑和预览
+
+1. 在 VS Code 打开本文件夹。
+2. 修改对应 HTML 文件，用 Ctrl+S 保存。
+3. 在 Windows 文件资源管理器中右键 `index.html`，用 Edge 或 Chrome 打开。
+4. 每次修改后刷新浏览器。各页面之间的导航及 PDF 链接都可以直接本地使用。
+
+配色在 `styles.css` 顶部的 `:root` 中统一设置，深蓝色由 `--navy` 控制。
+
+## 资料依据和后续更新
+
+- 身份、学历、联系方式、论文、课程及奖项依据本次提供的两页 CV。保留 CV 中标注为 present 的日期。
+- CV 只说明 Ph.D. 在读，因此主页使用 Ph.D. Student，没有推定 candidacy、毕业日期或 job-market 状态。
+- 论文标题和合作者按 CV 保留，未编写论文摘要、结果或发表状态。收到正式摘要和论文 PDF 后可加入。
+- 没有提供个人照片，所以使用完整的纯文字版式，没有虚构头像或占位照片。
+- 下载的 PDF 是原件的逐字节副本，仍包含原 CV 中的电话等联系方式。
+- 更新 CV 时，用同名文件替换 `assets/Lulin_Li_CV.pdf`，并同步修改各 HTML 页面相关文字。
+- 更新论文时，首页与研究页都需要修改。页面导航在四个 HTML 文件中各有一份。
+
+## 添加论文 PDF
+
+把文件放到 `assets/papers/`，例如 `assets/papers/platforms.pdf`。在研究页对应论文中添加：
+
+```html
+<a class="text-link" href="assets/papers/platforms.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+```
+
+## 上传到 GitHub
+
+这次只编辑本地文件，没有自动提交、推送或发布。确认内容后，在此文件夹的 VS Code 终端中按顺序运行：
+
+```powershell
+git status
+git add index.html research.html teaching.html cv.html styles.css assets .nojekyll EDITING.md
+git commit -m "Build academic personal website"
+git push
+```
+
+然后在 GitHub 仓库的 Settings → Pages 中，选择 Deploy from a branch、main、/(root)，保存。仓库当前关联的是 `https://github.com/ricoLLL/personal-website.git`。
+
+## Cloudflare 域名
+
+网站使用相对链接，兼容 GitHub 项目网址和将来的独立域名。买好域名后，先在 GitHub Pages 中设置 Custom domain，再在 Cloudflare 配置对应 DNS。当前没有创建 CNAME 文件或假定你已购买某个域名。
+
+## 设计参考
+
+- https://mengsong.net/ — 清晰导航和直接的学术简介。
+- https://sites.google.com/view/feifanwang/about — 简洁的介绍和分页面结构。
+- https://sites.google.com/view/xiaofeng-gong/home — 衬线标题和清晰的研究方向。
+- https://keuncheol-lee.com/ — 独立的教育、研究和教学分区。
+
+页面代码、配色和排版为本次重新设计；没有复制其他人的照片、简历或论文内容。
