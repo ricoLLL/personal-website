@@ -37,7 +37,7 @@ nav a:hover { color: var(--navy); border-bottom-color: #b4c4cf; }
 .role { font: 19px/1.6 var(--serif); color: var(--muted); margin-top: 10px; }
 .biography { margin-top: 29px; font-size: 16px; line-height: 1.85; }
 .biography p + p { margin-top: 16px; }
-.intro-links { display: flex; flex-wrap: wrap; gap: 14px 30px; margin-top: 30px; }
+.intro-links { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 30px; }
 .text-link { display: inline-flex; align-items: baseline; gap: 9px; font-size: 13px; font-weight: 500; text-decoration: none; }
 .text-link:hover { text-decoration: underline; }
 .text-link span[aria-hidden] { font-size: 17px; }
@@ -141,7 +141,7 @@ address { margin-top: 16px; color: var(--muted); font-size: 12px; font-style: no
   .home-intro h1 { font-size: 52px; }
   .role { font-size: 18px; }
   .biography { margin-top: 24px; font-size: 15px; }
-  .intro-links { gap: 20px; margin-top: 24px; }
+  .intro-links { margin-top: 24px; }
   .profile-aside { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 0; padding-top: 20px; border-top-width: 2px; }
   .portrait-frame { grid-column: 1 / -1; width: min(220px, 100%); justify-self: center; margin: 0 0 4px; }
   .aside-section + .aside-section { margin: 0; padding: 0; border: 0; }
@@ -184,7 +184,6 @@ address { margin-top: 16px; color: var(--muted); font-size: 12px; font-style: no
 @media (max-width: 360px) {
   .profile-aside { grid-template-columns: 1fr; gap: 26px; }
   .section-heading { flex-wrap: wrap; }
-  .intro-links { flex-direction: column; gap: 14px; }
   .cv-heading h1 { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
